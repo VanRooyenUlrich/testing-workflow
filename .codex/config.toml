@@ -1,0 +1,4 @@
+[mcp_servers.ai-delivery]
+command = "node"
+args = ["node_modules/ai-delivery-workflow/dist/src/cli/main.js", "mcp", "serve", "--session-env"]
+required = true

@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "ai-delivery": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "node_modules/ai-delivery-workflow/dist/src/cli/main.js",
+        "mcp",
+        "serve",
+        "--session-env"
+      ]
+    }
+  }
+}

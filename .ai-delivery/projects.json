@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "projects": [
+    {
+      "id": "app",
+      "path": "."
+    }
+  ]
+}

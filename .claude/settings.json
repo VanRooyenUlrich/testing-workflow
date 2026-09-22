@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "defaultMode": "dontAsk",
+    "allow": [
+      "mcp__ai-delivery__*"
+    ],
+    "deny": [
+      "Bash",
+      "Edit",
+      "Write",
+      "NotebookEdit",
+      "WebFetch",
+      "WebSearch",
+      "Agent"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"node_modules/ai-delivery-workflow/dist/src/cli/main.js\" hook pre --session-env",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"node_modules/ai-delivery-workflow/dist/src/cli/main.js\" hook post --session-env",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
