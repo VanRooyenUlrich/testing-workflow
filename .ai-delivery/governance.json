@@ -48,6 +48,63 @@
         "allowedDomains": [],
         "requiredForReview": true
       }
+    },
+    "dotnet:restore": {
+      "executable": "dotnet",
+      "args": [
+        "msbuild",
+        "ai-delivery-validation.targets",
+        "-target:RestoreCandidate"
+      ],
+      "isolation": {
+        "workingDirectory": ".",
+        "image": "mcr.microsoft.com/dotnet/sdk@sha256:35d40304542c8689331f8cab17c65926cdf48fe711e289321d71924b230a7d29",
+        "timeoutMs": 900000,
+        "cpus": 2,
+        "memoryMb": 2048,
+        "pids": 256,
+        "network": "none",
+        "allowedDomains": [],
+        "requiredForReview": true
+      }
+    },
+    "dotnet:build": {
+      "executable": "dotnet",
+      "args": [
+        "msbuild",
+        "ai-delivery-validation.targets",
+        "-target:BuildCandidate"
+      ],
+      "isolation": {
+        "workingDirectory": ".",
+        "image": "mcr.microsoft.com/dotnet/sdk@sha256:35d40304542c8689331f8cab17c65926cdf48fe711e289321d71924b230a7d29",
+        "timeoutMs": 900000,
+        "cpus": 2,
+        "memoryMb": 2048,
+        "pids": 256,
+        "network": "none",
+        "allowedDomains": [],
+        "requiredForReview": true
+      }
+    },
+    "dotnet:test": {
+      "executable": "dotnet",
+      "args": [
+        "msbuild",
+        "ai-delivery-validation.targets",
+        "-target:TestCandidate"
+      ],
+      "isolation": {
+        "workingDirectory": ".",
+        "image": "mcr.microsoft.com/dotnet/sdk@sha256:35d40304542c8689331f8cab17c65926cdf48fe711e289321d71924b230a7d29",
+        "timeoutMs": 900000,
+        "cpus": 2,
+        "memoryMb": 2048,
+        "pids": 256,
+        "network": "none",
+        "allowedDomains": [],
+        "requiredForReview": true
+      }
     }
   },
   "dataClassification": "INTERNAL",
