@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <ValidationTarget Condition="Exists('IssueTracker.sln')">IssueTracker.sln</ValidationTarget>
+    <ValidationTarget Condition="'$(ValidationTarget)' == ''">ai-delivery-toolchain.csproj</ValidationTarget>
+  </PropertyGroup>
+
+  <Target Name="RestoreCandidate">
+    <Exec Command="dotnet restore &quot;$(ValidationTarget)&quot;" />
+  </Target>
+
+  <Target Name="BuildCandidate">
+    <Exec Command="dotnet restore &quot;$(ValidationTarget)&quot;" />
+    <Exec Command="dotnet build &quot;$(ValidationTarget)&quot; --no-restore" />
+  </Target>
+
+  <Target Name="TestCandidate">
+    <Exec Command="dotnet restore &quot;$(ValidationTarget)&quot;" />
+    <Exec Command="dotnet build &quot;$(ValidationTarget)&quot; --no-restore" />
+    <Exec Command="dotnet test &quot;$(ValidationTarget)&quot; --no-build --no-restore" />
+  </Target>
+</Project>

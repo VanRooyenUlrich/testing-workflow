@@ -1,0 +1,16 @@
+{
+  "name": "testing-workflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node --check src/index.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "ai-delivery-workflow": "file:releases/ai-delivery-workflow-1.0.0.tgz"
+  }
+}

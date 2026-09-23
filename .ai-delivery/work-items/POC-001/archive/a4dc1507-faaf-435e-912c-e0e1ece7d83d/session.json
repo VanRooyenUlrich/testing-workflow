@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 1,
+  "revision": 36,
+  "id": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+  "workItem": "POC-001",
+  "project": "app",
+  "repository": "D:/Testing projects/workflow test/testing-workflow",
+  "hostRoot": "D:\\Testing projects\\workflow test\\testing-workflow",
+  "workspace": "C:\\Users\\User\\AppData\\Local\\Temp\\ai-delivery-session-chyKcL\\workspace",
+  "baselineContentRoot": "C:\\Users\\User\\AppData\\Local\\Temp\\ai-delivery-session-chyKcL\\baseline-content",
+  "mode": "ISOLATED_WORKTREE",
+  "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+  "registryHash": "9062058771a8882e11f82c2bc2eeb5e1e9d155ac69019e76065e7406d2fe4e7c",
+  "manifestHash": "b0519113e1b93c97e647bc3c0f169933ff5b3398ce99f7e699d8e28c93e937dd",
+  "manifest": {
+    "workItem": "POC-001",
+    "project": "app",
+    "stage": "READY_FOR_REVIEW",
+    "riskProfile": "STANDARD",
+    "filesystem": {
+      "read": [
+        "**/*"
+      ],
+      "write": [
+        ".ai-delivery/work-items/POC-001/review.md"
+      ],
+      "delete": []
+    },
+    "terminal": {
+      "available": false,
+      "arbitraryCommands": false,
+      "fixedCommands": []
+    },
+    "git": {
+      "inspect": true,
+      "mutate": false
+    },
+    "mcp": {
+      "allowedServers": [
+        "ai-delivery"
+      ],
+      "allowedOperations": [
+        "changed_paths",
+        "evidence_validate",
+        "file_list",
+        "file_read",
+        "file_search",
+        "final_diff_validate",
+        "git_diff",
+        "git_status",
+        "review_submit",
+        "scope_validate",
+        "status"
+      ]
+    },
+    "network": {
+      "enabled": false,
+      "allowedDomains": []
+    },
+    "credentials": {
+      "hostCredentialsAvailable": false
+    },
+    "workspace": {
+      "isolationMode": "ISOLATED_WORKTREE"
+    },
+    "promotion": {
+      "required": true
+    }
+  },
+  "baseline": {
+    ".gitignore": {
+      "sha256": "f4aaed374ff1b29412448dc810fe6adfe8d602a0599be2f7e782f27708ed8a1d",
+      "size": 41
+    },
+    ".mcp.json": {
+      "sha256": "8b7ffe4741a6e058821cec87be7b20f100d93aecca6d9b7bc704d00c08198297",
+      "size": 224
+    },
+    "AGENTS.md": {
+      "sha256": "f263a1678f4ba216cb88e6c493b440c2072369708b06e35f6384dd01e1d4269d",
+      "size": 425
+    },
+    "README.md": {
+      "sha256": "b4e24a549f67faa1a74ccd5ab88adb5061c53d5bf4badb3bf28829961c9c2069",
+      "size": 163
+    },
+    "ai-delivery-toolchain.csproj": {
+      "sha256": "db15e028c47addb909adf4510a4350b8ac4fe9ae24af5a1ac77a119be9689abd",
+      "size": 616
+    },
+    "ai-delivery-validation.targets": {
+      "sha256": "79d7c25de6d69dc87893e7cdab481cea1062be80eea27709b45388f79c89ec21",
+      "size": 867
+    },
+    "package-lock.json": {
+      "sha256": "b833ab3c14b2dd42f058caee82985967d1ece6d75de30e0d26d24e2a19e4723b",
+      "size": 791
+    },
+    "package.json": {
+      "sha256": "8d52b414323bc41a0277951c03d48ddd25edbbafe58cb4f9a4de445acaa32735",
+      "size": 323
+    },
+    "releases/ai-delivery-workflow-1.0.0.tgz": {
+      "sha256": "d842c26352682e8659a9294e047279bb70885e35fb0303d7efd95ffcdc4010da",
+      "size": 208701
+    },
+    "src/index.js": {
+      "sha256": "0ac18e66b887cb33b0b1b7b59e39fdf29b28578db9fc07599be8135280b43625",
+      "size": 186
+    },
+    "test/index.test.js": {
+      "sha256": "d6a6b30a89af3bd16818dd5a0096ebd641f44bdf407e8bf0e11260b512bdaf36",
+      "size": 333
+    },
+    "test/workflow-command-receipt.test.js": {
+      "sha256": "b774967d83773959e9e66961123aa4e127a8b26627341c674a2870bd04b7bb5b",
+      "size": 4294
+    }
+  },
+  "sourceBaseline": {
+    ".gitignore": {
+      "sha256": "f4aaed374ff1b29412448dc810fe6adfe8d602a0599be2f7e782f27708ed8a1d",
+      "size": 41
+    },
+    ".mcp.json": {
+      "sha256": "8b7ffe4741a6e058821cec87be7b20f100d93aecca6d9b7bc704d00c08198297",
+      "size": 224
+    },
+    "AGENTS.md": {
+      "sha256": "f263a1678f4ba216cb88e6c493b440c2072369708b06e35f6384dd01e1d4269d",
+      "size": 425
+    },
+    "README.md": {
+      "sha256": "b4e24a549f67faa1a74ccd5ab88adb5061c53d5bf4badb3bf28829961c9c2069",
+      "size": 163
+    },
+    "ai-delivery-toolchain.csproj": {
+      "sha256": "db15e028c47addb909adf4510a4350b8ac4fe9ae24af5a1ac77a119be9689abd",
+      "size": 616
+    },
+    "ai-delivery-validation.targets": {
+      "sha256": "79d7c25de6d69dc87893e7cdab481cea1062be80eea27709b45388f79c89ec21",
+      "size": 867
+    },
+    "package-lock.json": {
+      "sha256": "b833ab3c14b2dd42f058caee82985967d1ece6d75de30e0d26d24e2a19e4723b",
+      "size": 791
+    },
+    "package.json": {
+      "sha256": "8d52b414323bc41a0277951c03d48ddd25edbbafe58cb4f9a4de445acaa32735",
+      "size": 323
+    },
+    "releases/ai-delivery-workflow-1.0.0.tgz": {
+      "sha256": "d842c26352682e8659a9294e047279bb70885e35fb0303d7efd95ffcdc4010da",
+      "size": 208701
+    },
+    "src/index.js": {
+      "sha256": "0ac18e66b887cb33b0b1b7b59e39fdf29b28578db9fc07599be8135280b43625",
+      "size": 186
+    },
+    "test/index.test.js": {
+      "sha256": "d6a6b30a89af3bd16818dd5a0096ebd641f44bdf407e8bf0e11260b512bdaf36",
+      "size": 333
+    },
+    "test/workflow-command-receipt.test.js": {
+      "sha256": "b774967d83773959e9e66961123aa4e127a8b26627341c674a2870bd04b7bb5b",
+      "size": 4294
+    }
+  },
+  "expectedHost": {
+    ".gitignore": {
+      "sha256": "61aaa723dfd246d3e25a7e73505df2ad339fb6afb4ac9335463e486c7b4f1ad2",
+      "size": 254
+    },
+    ".mcp.json": {
+      "sha256": "8b7ffe4741a6e058821cec87be7b20f100d93aecca6d9b7bc704d00c08198297",
+      "size": 224
+    },
+    "AGENTS.md": {
+      "sha256": "f263a1678f4ba216cb88e6c493b440c2072369708b06e35f6384dd01e1d4269d",
+      "size": 425
+    },
+    "README.md": {
+      "sha256": "650fb29a322a33a84daab892bc34d9c814b6cc38027056cf75e47f1021d8d873",
+      "size": 1726
+    },
+    "ai-delivery-toolchain.csproj": {
+      "sha256": "db15e028c47addb909adf4510a4350b8ac4fe9ae24af5a1ac77a119be9689abd",
+      "size": 616
+    },
+    "ai-delivery-validation.targets": {
+      "sha256": "79d7c25de6d69dc87893e7cdab481cea1062be80eea27709b45388f79c89ec21",
+      "size": 867
+    },
+    "package-lock.json": {
+      "sha256": "b833ab3c14b2dd42f058caee82985967d1ece6d75de30e0d26d24e2a19e4723b",
+      "size": 791
+    },
+    "package.json": {
+      "sha256": "8d52b414323bc41a0277951c03d48ddd25edbbafe58cb4f9a4de445acaa32735",
+      "size": 323
+    },
+    "releases/ai-delivery-workflow-1.0.0.tgz": {
+      "sha256": "d842c26352682e8659a9294e047279bb70885e35fb0303d7efd95ffcdc4010da",
+      "size": 208701
+    },
+    "src/index.js": {
+      "sha256": "0ac18e66b887cb33b0b1b7b59e39fdf29b28578db9fc07599be8135280b43625",
+      "size": 186
+    },
+    "test/index.test.js": {
+      "sha256": "d6a6b30a89af3bd16818dd5a0096ebd641f44bdf407e8bf0e11260b512bdaf36",
+      "size": 333
+    },
+    "test/workflow-command-receipt.test.js": {
+      "sha256": "b774967d83773959e9e66961123aa4e127a8b26627341c674a2870bd04b7bb5b",
+      "size": 4294
+    },
+    ".editorconfig": {
+      "sha256": "8af2adfdf2cc3e103f3bef8e7adf2ef943a73bb0ba8f8996f66f8cc76a87fdfb",
+      "size": 406
+    },
+    "Directory.Build.props": {
+      "sha256": "6f6566fc12eb6f2c99e4be00c53aaa837dbf096b9dae368566c7d51b5c947172",
+      "size": 221
+    },
+    "IssueTracker.sln": {
+      "sha256": "25cb04081226dc14c4449403528b9a3129ca95dce418da61cc36680c25cf541c",
+      "size": 2602
+    },
+    "global.json": {
+      "sha256": "a647fbc942871cef23ce38ef75c362bd02269b0bb634aa348a4537cadc926c3f",
+      "size": 111
+    },
+    "src/IssueTracker.Api/IssueTracker.Api.csproj": {
+      "sha256": "3beedb5545b3b1b8b1f6154880b3dc984720258e6d820486e258e32d6711bbb3",
+      "size": 364
+    },
+    "src/IssueTracker.Api/Program.cs": {
+      "sha256": "0e5b243c80c822fbe54e7ae08eae7032dc2e7e0e41da6d99e41f3afb148b3498",
+      "size": 1390
+    },
+    "src/IssueTracker.Api/appsettings.Development.json": {
+      "sha256": "f1c8ac2e8e5440b7fec327823b6026f13e687f982e64ffce6850248542b29ca5",
+      "size": 80
+    },
+    "src/IssueTracker.Api/appsettings.json": {
+      "sha256": "2d8bb40059df22089b94c025be8baad5a869b72d4d755d199c872f03bfe6f225",
+      "size": 142
+    },
+    "src/IssueTracker.Core/DependencyInjection.cs": {
+      "sha256": "bfd137cb450db2fe80952c5c070493b4c99fec01ab10a78c78fcbb70cf5529c8",
+      "size": 293
+    },
+    "src/IssueTracker.Core/IssueTracker.Core.csproj": {
+      "sha256": "5b4695db95e2be26b06011a071a3ca8a557f61658b76af589a6de0f6d04db066",
+      "size": 181
+    },
+    "src/IssueTracker.Infrastructure/DependencyInjection.cs": {
+      "sha256": "d87de53a98654710766a0da4bd8cd79d3c5dca6b563e8df760cc8b37b5828863",
+      "size": 313
+    },
+    "src/IssueTracker.Infrastructure/IssueTracker.Infrastructure.csproj": {
+      "sha256": "785530e5fcedb9bfbdf948691c0a7e4a9eeb5d353753ad761a3cd4d3c534a2d2",
+      "size": 291
+    },
+    "tests/IssueTracker.Api.Tests/HealthEndpointTests.cs": {
+      "sha256": "d83aae21671ce6856b494810a06860a346f898ad2a2d3a5467789ca9e5c3dac2",
+      "size": 619
+    },
+    "tests/IssueTracker.Api.Tests/IssueTracker.Api.Tests.csproj": {
+      "sha256": "e8c148fd9706b0e19af8142755a8306a3f2c384fa3ba132e4b72323da84bd3fa",
+      "size": 762
+    }
+  },
+  "expectedWorkspace": {
+    ".editorconfig": {
+      "sha256": "8af2adfdf2cc3e103f3bef8e7adf2ef943a73bb0ba8f8996f66f8cc76a87fdfb",
+      "size": 406
+    },
+    ".gitignore": {
+      "sha256": "61aaa723dfd246d3e25a7e73505df2ad339fb6afb4ac9335463e486c7b4f1ad2",
+      "size": 254
+    },
+    ".mcp.json": {
+      "sha256": "8b7ffe4741a6e058821cec87be7b20f100d93aecca6d9b7bc704d00c08198297",
+      "size": 224
+    },
+    "AGENTS.md": {
+      "sha256": "f263a1678f4ba216cb88e6c493b440c2072369708b06e35f6384dd01e1d4269d",
+      "size": 425
+    },
+    "Directory.Build.props": {
+      "sha256": "6f6566fc12eb6f2c99e4be00c53aaa837dbf096b9dae368566c7d51b5c947172",
+      "size": 221
+    },
+    "IssueTracker.sln": {
+      "sha256": "25cb04081226dc14c4449403528b9a3129ca95dce418da61cc36680c25cf541c",
+      "size": 2602
+    },
+    "README.md": {
+      "sha256": "650fb29a322a33a84daab892bc34d9c814b6cc38027056cf75e47f1021d8d873",
+      "size": 1726
+    },
+    "ai-delivery-toolchain.csproj": {
+      "sha256": "db15e028c47addb909adf4510a4350b8ac4fe9ae24af5a1ac77a119be9689abd",
+      "size": 616
+    },
+    "ai-delivery-validation.targets": {
+      "sha256": "79d7c25de6d69dc87893e7cdab481cea1062be80eea27709b45388f79c89ec21",
+      "size": 867
+    },
+    "global.json": {
+      "sha256": "a647fbc942871cef23ce38ef75c362bd02269b0bb634aa348a4537cadc926c3f",
+      "size": 111
+    },
+    "package-lock.json": {
+      "sha256": "b833ab3c14b2dd42f058caee82985967d1ece6d75de30e0d26d24e2a19e4723b",
+      "size": 791
+    },
+    "package.json": {
+      "sha256": "8d52b414323bc41a0277951c03d48ddd25edbbafe58cb4f9a4de445acaa32735",
+      "size": 323
+    },
+    "releases/ai-delivery-workflow-1.0.0.tgz": {
+      "sha256": "d842c26352682e8659a9294e047279bb70885e35fb0303d7efd95ffcdc4010da",
+      "size": 208701
+    },
+    "src/IssueTracker.Api/IssueTracker.Api.csproj": {
+      "sha256": "3beedb5545b3b1b8b1f6154880b3dc984720258e6d820486e258e32d6711bbb3",
+      "size": 364
+    },
+    "src/IssueTracker.Api/Program.cs": {
+      "sha256": "0e5b243c80c822fbe54e7ae08eae7032dc2e7e0e41da6d99e41f3afb148b3498",
+      "size": 1390
+    },
+    "src/IssueTracker.Api/appsettings.Development.json": {
+      "sha256": "f1c8ac2e8e5440b7fec327823b6026f13e687f982e64ffce6850248542b29ca5",
+      "size": 80
+    },
+    "src/IssueTracker.Api/appsettings.json": {
+      "sha256": "2d8bb40059df22089b94c025be8baad5a869b72d4d755d199c872f03bfe6f225",
+      "size": 142
+    },
+    "src/IssueTracker.Core/DependencyInjection.cs": {
+      "sha256": "bfd137cb450db2fe80952c5c070493b4c99fec01ab10a78c78fcbb70cf5529c8",
+      "size": 293
+    },
+    "src/IssueTracker.Core/IssueTracker.Core.csproj": {
+      "sha256": "5b4695db95e2be26b06011a071a3ca8a557f61658b76af589a6de0f6d04db066",
+      "size": 181
+    },
+    "src/IssueTracker.Infrastructure/DependencyInjection.cs": {
+      "sha256": "d87de53a98654710766a0da4bd8cd79d3c5dca6b563e8df760cc8b37b5828863",
+      "size": 313
+    },
+    "src/IssueTracker.Infrastructure/IssueTracker.Infrastructure.csproj": {
+      "sha256": "785530e5fcedb9bfbdf948691c0a7e4a9eeb5d353753ad761a3cd4d3c534a2d2",
+      "size": 291
+    },
+    "src/index.js": {
+      "sha256": "0ac18e66b887cb33b0b1b7b59e39fdf29b28578db9fc07599be8135280b43625",
+      "size": 186
+    },
+    "test/index.test.js": {
+      "sha256": "d6a6b30a89af3bd16818dd5a0096ebd641f44bdf407e8bf0e11260b512bdaf36",
+      "size": 333
+    },
+    "test/workflow-command-receipt.test.js": {
+      "sha256": "b774967d83773959e9e66961123aa4e127a8b26627341c674a2870bd04b7bb5b",
+      "size": 4294
+    },
+    "tests/IssueTracker.Api.Tests/HealthEndpointTests.cs": {
+      "sha256": "d83aae21671ce6856b494810a06860a346f898ad2a2d3a5467789ca9e5c3dac2",
+      "size": 619
+    },
+    "tests/IssueTracker.Api.Tests/IssueTracker.Api.Tests.csproj": {
+      "sha256": "e8c148fd9706b0e19af8142755a8306a3f2c384fa3ba132e4b72323da84bd3fa",
+      "size": 762
+    }
+  },
+  "artifactsHash": "be13bd0705ce53f9985f0d2719a3e733044f1ef2cc82cb8be715a7a0b6cdb836",
+  "approvalContextHash": "a431b16713f4a7dff219f892b98b9637eec988aa125e8ab8b75f2d02dba44dc7",
+  "baselineCommit": "1e84b48a157a281c6fcc2dc250882cec323b676d",
+  "role": "validation",
+  "epoch": 4,
+  "lifecycleState": "READY_FOR_REVIEW",
+  "issuedAt": "2026-09-23T09:27:33.988Z",
+  "expiresAt": "2026-09-23T17:27:33.988Z",
+  "grants": [],
+  "closed": true,
+  "handoff": {
+    "contentHash": "c6b79de643d5c6c0ee86b49c4707d1f20f19cf1baee80df2b01215d6c66ef2b8",
+    "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+    "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+    "manifestHash": "b0519113e1b93c97e647bc3c0f169933ff5b3398ce99f7e699d8e28c93e937dd",
+    "submittedAt": "2026-09-23T09:32:56.444Z"
+  },
+  "promotion": {
+    "confirmationHash": "acce3c82631de85a490652ab04934f5b091ce65f4ecb43e80932eb2297978814",
+    "applied": true,
+    "receiptHash": "8877e93f78ea78f7b11d4fa0ea24d6588fdd2d8387edf7031bad16040795f5b0",
+    "transactionId": "f94631c3-bf76-48e2-854a-e64e56d52aa7",
+    "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+    "appliedAt": "2026-09-23T09:52:52.234Z"
+  },
+  "revokedAt": "2026-09-23T09:59:19.587Z",
+  "revokedReason": "WORK_ITEM_COMPLETE"
+}

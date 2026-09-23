@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 2,
+  "gateVersion": 1,
+  "id": "POC-001",
+  "project": "app",
+  "ticket": "Create Issue Tracker backend API",
+  "createdAt": "2026-09-23T08:01:50.214Z",
+  "createdBy": "User",
+  "state": "COMPLETE",
+  "selectedProfile": "STANDARD",
+  "risk": {
+    "minimumProfile": "STANDARD",
+    "reasons": [],
+    "input": {
+      "affectedPaths": [
+        "IssueTracker.sln",
+        "global.json",
+        "Directory.Build.props",
+        ".gitignore",
+        ".editorconfig",
+        "README.md",
+        "src/IssueTracker.Api/**",
+        "src/IssueTracker.Core/**",
+        "src/IssueTracker.Infrastructure/**",
+        "tests/IssueTracker.Api.Tests/**"
+      ]
+    }
+  },
+  "artifacts": {
+    "discovery": {
+      "type": "discovery",
+      "relativePath": ".ai-delivery/work-items/POC-001/discovery.md",
+      "sha256": "798d58c6b18cdc03b0769d1ce67b36c2fba5c14a3e4160aa06a0d3767a99cfd5",
+      "updatedAt": "2026-09-23T08:03:50.846Z"
+    },
+    "specification": {
+      "type": "specification",
+      "relativePath": ".ai-delivery/work-items/POC-001/specification.md",
+      "sha256": "4ad0c5a716b18cac34f33da1c1a2f999a0e664fbca869abcc11dcb12f4316249",
+      "updatedAt": "2026-09-23T08:05:14.718Z"
+    },
+    "plan": {
+      "type": "plan",
+      "relativePath": ".ai-delivery/work-items/POC-001/plan.md",
+      "sha256": "a56513cbce4e70d0c87048322c00f6cbbd8f60d41c82ba33764ddd41c9ec9863",
+      "updatedAt": "2026-09-23T08:43:40.150Z"
+    },
+    "review": {
+      "type": "review",
+      "relativePath": ".ai-delivery/work-items/POC-001/review.md",
+      "sha256": "db0094a493d908ce45a391c2a974cdb80d880b8ac2c6f620d713fbd9ecf3cc90",
+      "updatedAt": "2026-09-23T09:37:25.249Z"
+    }
+  },
+  "confirmations": [
+    {
+      "workItemId": "POC-001",
+      "action": "ACCEPT_SPECIFICATION",
+      "project": "app",
+      "riskProfile": "STANDARD",
+      "artifactType": "specification",
+      "artifactSha256": "4ad0c5a716b18cac34f33da1c1a2f999a0e664fbca869abcc11dcb12f4316249",
+      "timestamp": "2026-09-23T08:13:48.344Z",
+      "localOsUser": "User",
+      "stale": false
+    },
+    {
+      "workItemId": "POC-001",
+      "action": "APPROVE_PLAN",
+      "project": "app",
+      "riskProfile": "STANDARD",
+      "artifactType": "plan",
+      "artifactSha256": "a56513cbce4e70d0c87048322c00f6cbbd8f60d41c82ba33764ddd41c9ec9863",
+      "timestamp": "2026-09-23T08:47:01.092Z",
+      "localOsUser": "User",
+      "stale": false
+    },
+    {
+      "workItemId": "POC-001",
+      "action": "COMPLETE_WORK_ITEM",
+      "project": "app",
+      "riskProfile": "STANDARD",
+      "timestamp": "2026-09-23T09:59:19.400Z",
+      "localOsUser": "User",
+      "stale": false
+    }
+  ],
+  "validations": [
+    {
+      "name": "dotnet:build",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:build",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:33:29.579Z",
+      "stale": true,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "c3e0370b7bc3cca491a15f08ab993aed7f1227c82aa4226c8c43d6c3f10d4331"
+      }
+    },
+    {
+      "name": "dotnet:restore",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:restore",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:33:40.284Z",
+      "stale": true,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "28447943c5c4da202eb3721f9c999c1ebe81573507e58fda08dae27e1f29a471"
+      }
+    },
+    {
+      "name": "dotnet:test",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:test",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:00.788Z",
+      "stale": true,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "cd53958ac8183219b709b4f4a9548788c2f10f1f819ab5736023786185e1beea"
+      }
+    },
+    {
+      "name": "lint",
+      "outcome": "PASS",
+      "summary": "Governed command completed: lint",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:05.528Z",
+      "stale": true,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "fffeca5024b8bde552cef509dec4ce2b52c322ab531d317a904e1ff5bb50345f"
+      }
+    },
+    {
+      "name": "test",
+      "outcome": "PASS",
+      "summary": "Governed command completed: test",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:11.185Z",
+      "stale": true,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "2b2420599711b6c3afe38613c6128e8f9be5c88bf36b5978d3d24eea7bd87ac7"
+      }
+    },
+    {
+      "name": "diff",
+      "outcome": "PASS",
+      "summary": "Governed final diff and evidence validation completed",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:11.627Z",
+      "stale": true,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "FINAL_DIFF",
+        "outputHash": "8eeec61443650008f466a8ec6bc11a1c6e0779a79ac76ade3f7fe64f7b0ddc6c"
+      }
+    },
+    {
+      "name": "dotnet:build",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:build",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:33:29.579Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "c3e0370b7bc3cca491a15f08ab993aed7f1227c82aa4226c8c43d6c3f10d4331"
+      }
+    },
+    {
+      "name": "dotnet:restore",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:restore",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:33:40.284Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "28447943c5c4da202eb3721f9c999c1ebe81573507e58fda08dae27e1f29a471"
+      }
+    },
+    {
+      "name": "dotnet:test",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:test",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:00.788Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "cd53958ac8183219b709b4f4a9548788c2f10f1f819ab5736023786185e1beea"
+      }
+    },
+    {
+      "name": "lint",
+      "outcome": "PASS",
+      "summary": "Governed command completed: lint",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:05.528Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "fffeca5024b8bde552cef509dec4ce2b52c322ab531d317a904e1ff5bb50345f"
+      }
+    },
+    {
+      "name": "test",
+      "outcome": "PASS",
+      "summary": "Governed command completed: test",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:11.185Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "2b2420599711b6c3afe38613c6128e8f9be5c88bf36b5978d3d24eea7bd87ac7"
+      }
+    },
+    {
+      "name": "dotnet:build",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:build",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:30.617Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "75cb2a7372fed85ada0649250da1a83c62444b3e1b332c0c3f80067de16f2145"
+      }
+    },
+    {
+      "name": "dotnet:restore",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:restore",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:34:42.327Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "b7bc508dd915b6da323500ea44a6b8d1e47175bb928f4019207dd4a4858cc751"
+      }
+    },
+    {
+      "name": "dotnet:test",
+      "outcome": "PASS",
+      "summary": "Governed command completed: dotnet:test",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:35:03.881Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "bc45552ccb6ce6990b45c49aa2ab0fb88d657ef3597227a5073eaa3a18e23638"
+      }
+    },
+    {
+      "name": "lint",
+      "outcome": "PASS",
+      "summary": "Governed command completed: lint",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:35:07.900Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "fffeca5024b8bde552cef509dec4ce2b52c322ab531d317a904e1ff5bb50345f"
+      }
+    },
+    {
+      "name": "test",
+      "outcome": "PASS",
+      "summary": "Governed command completed: test",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:35:12.777Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "COMMAND",
+        "outputHash": "db3b7aea0cfb5b433e9317012ff2ffa345efba0fa71f5252ccdc816a9bb5aa51"
+      }
+    },
+    {
+      "name": "diff",
+      "outcome": "PASS",
+      "summary": "Governed final diff and evidence validation completed",
+      "policyValidation": false,
+      "timestamp": "2026-09-23T09:35:13.243Z",
+      "stale": false,
+      "enforcement": {
+        "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+        "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+        "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+        "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+      },
+      "execution": {
+        "kind": "FINAL_DIFF",
+        "outputHash": "a487827e14606475daedee0a701224012f755870df8357707eddb5fb7a62945b"
+      }
+    }
+  ],
+  "capabilityManifestHash": "990e82f8fb30f52d086ab65ed6d660e5b9c3d6438bd661ebaee2a1f47396af5a",
+  "revision": 58,
+  "enforcementEpoch": 4,
+  "suspension": {
+    "active": false,
+    "reason": "Workflow command evidence hash defect repaired and committed as 1e84b48; host baseline must be renewed before revalidation",
+    "timestamp": "2026-09-23T09:26:52.844Z"
+  },
+  "review": {
+    "reviewer": "review-session:4b1a8c28-5d02-400e-97b6-79cfba63ffdf",
+    "outcome": "APPROVED",
+    "independent": true,
+    "humanReviewed": false,
+    "artifactSha256": "db0094a493d908ce45a391c2a974cdb80d880b8ac2c6f620d713fbd9ecf3cc90",
+    "timestamp": "2026-09-23T09:37:12.737Z",
+    "enforcement": {
+      "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+      "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+      "governanceHash": "bce24421c462e23f4063f0a3655fb15dcbe88fb3ee23b9576aa18fe61240e52c",
+      "manifestHash": "bda440358b616cb5ac0d0b253fcd6fdd2168eb043ec596bb882eb79ec44c8095"
+    },
+    "reviewSessionId": "4b1a8c28-5d02-400e-97b6-79cfba63ffdf",
+    "findingsHash": "db0094a493d908ce45a391c2a974cdb80d880b8ac2c6f620d713fbd9ecf3cc90",
+    "handoffHash": "c6b79de643d5c6c0ee86b49c4707d1f20f19cf1baee80df2b01215d6c66ef2b8",
+    "confirmationHash": "d4c86aa35b6869385621f2bd16f093e3aa5e8a3eae45c78778dfb2a978727a8b",
+    "stale": false
+  }
+}

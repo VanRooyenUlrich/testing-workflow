@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "transactionId": "f94631c3-bf76-48e2-854a-e64e56d52aa7",
+  "workItem": "POC-001",
+  "project": "app",
+  "sessionId": "a4dc1507-faaf-435e-912c-e0e1ece7d83d",
+  "snapshotHash": "d5bd796178b180987772958c9db349b234e0d93883481ff7bfa7f8c374f2ec05",
+  "confirmationHash": "acce3c82631de85a490652ab04934f5b091ce65f4ecb43e80932eb2297978814",
+  "targetRoot": "D:\\Testing projects\\workflow test\\testing-workflow",
+  "changeHash": "4f205766f9c57761d536aa0fae89066729e81dcdf8c84038112fddc7ff6aec4e",
+  "noChange": false,
+  "appliedAt": "2026-09-23T09:52:52.234Z"
+}
