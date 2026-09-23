@@ -17,3 +17,11 @@ artifacts/
 
 # Local development configuration
 appsettings.Local.json
+
+# Frontend build, test, and local configuration
+.next/
+coverage/
+.env
+.env.*
+!.env.example
+.vite/
