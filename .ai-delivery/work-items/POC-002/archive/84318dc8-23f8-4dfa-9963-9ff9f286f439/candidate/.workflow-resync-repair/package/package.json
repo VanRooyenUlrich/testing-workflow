@@ -1,0 +1,52 @@
+{
+  "name": "ai-delivery-workflow",
+  "version": "1.0.0",
+  "description": "Reusable, application-governed AI-assisted delivery workflow",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "ai-delivery": "dist/src/cli/main.js"
+  },
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./cli": "./dist/src/cli/main.js"
+  },
+  "files": [
+    "dist/src",
+    "schemas",
+    "policy",
+    "containers",
+    "docs",
+    "skills",
+    "scripts/policy-test.mjs",
+    "README.md"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "tsc -p tsconfig.json",
+    "clean": "node scripts/clean.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "pretest": "npm run build",
+    "test": "node scripts/test.mjs",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
+    "package:test": "node scripts/package-test.mjs",
+    "release:candidate": "npm run check && node scripts/release-bundle.mjs",
+    "release:bundle": "npm run check && node scripts/release-bundle.mjs --final",
+    "check": "npm run typecheck && npm run lint && npm test && npm run package:test",
+    "policy:test": "node scripts/policy-test.mjs",
+    "docker:test": "npm run build && node scripts/docker-test.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.35.0",
+    "@types/node": "22.18.1",
+    "eslint": "9.35.0",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.42.0"
+  }
+}

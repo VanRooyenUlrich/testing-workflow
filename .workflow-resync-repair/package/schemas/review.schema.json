@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://runninghill.example/ai-delivery/review.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["reviewer", "outcome", "independent", "humanReviewed", "artifactSha256", "timestamp", "enforcement", "reviewSessionId", "findingsHash", "confirmationHash", "stale"],
+  "properties": {
+    "reviewer": { "type": "string", "minLength": 1 },
+    "outcome": { "enum": ["APPROVED", "CHANGES_REQUESTED"] },
+    "independent": { "type": "boolean" },
+    "humanReviewed": { "type": "boolean" },
+    "artifactSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "enforcement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sessionId", "snapshotHash", "governanceHash", "manifestHash"],
+      "properties": {
+        "sessionId": { "type": "string", "minLength": 1 },
+        "snapshotHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "governanceHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "manifestHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "reviewSessionId": { "type": "string", "minLength": 1 },
+    "findingsHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "handoffHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "confirmationHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "humanReviewer": { "type": "string", "minLength": 1 },
+    "stale": { "type": "boolean" },
+    "staleReason": { "type": "string" }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://runninghill.example/ai-delivery/governance.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "workflowVersion", "projectId", "allowedPaths", "deniedPaths", "commands", "dataClassification", "riskRules", "confirmations", "capabilities", "validation"],
+  "properties": {
+    "schemaVersion": { "const": 2 }, "workflowVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+/governance-[0-9]+/schema-[0-9]+$" }, "projectId": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$" },
+    "allowedPaths": { "$ref": "#/$defs/strings" }, "deniedPaths": { "$ref": "#/$defs/strings" },
+    "commands": { "type": "object", "additionalProperties": { "type": "object", "additionalProperties": false, "required": ["executable", "args"], "properties": { "executable": { "type": "string", "minLength": 1 }, "args": { "$ref": "#/$defs/strings" }, "isolation": { "$ref": "#/$defs/isolation" } } } },
+    "dataClassification": { "enum": ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED"] },
+    "riskRules": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["code", "source", "profile"], "properties": { "code": { "type": "string", "minLength": 1 }, "source": { "type": "string", "minLength": 1 }, "profile": { "enum": ["LIGHTWEIGHT", "STANDARD", "HIGH_RISK"] }, "pathPatterns": { "$ref": "#/$defs/strings" }, "commandPatterns": { "$ref": "#/$defs/strings" }, "nonDowngradable": { "type": "boolean" } } } },
+    "confirmations": { "type": "object", "additionalProperties": false, "required": ["lightweightSpecification", "lightweightPlan"], "properties": { "lightweightSpecification": { "type": "boolean" }, "lightweightPlan": { "type": "boolean" } } },
+    "capabilities": { "type": "object", "additionalProperties": false, "required": ["allowedMcpServers", "allowedMcpOperations", "lightweightNetworkDomains"], "properties": { "allowedMcpServers": { "$ref": "#/$defs/strings" }, "allowedMcpOperations": { "$ref": "#/$defs/strings" }, "lightweightNetworkDomains": { "$ref": "#/$defs/strings" } } },
+    "validation": { "type": "object", "additionalProperties": false, "required": ["requiredCommands", "policyCommands", "requirePolicyValidationForHighRisk", "builtInPolicy"], "properties": { "requiredCommands": { "$ref": "#/$defs/strings" }, "policyCommands": { "$ref": "#/$defs/strings" }, "requirePolicyValidationForHighRisk": { "type": "boolean" }, "builtInPolicy": { "const": true } } }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "isolation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["workingDirectory", "image", "timeoutMs", "cpus", "memoryMb", "pids", "network", "allowedDomains", "requiredForReview"],
+      "properties": {
+        "workingDirectory": { "type": "string" },
+        "image": { "type": "string", "pattern": "^(?:[a-z0-9][a-z0-9./:_-]*@)?sha256:[a-f0-9]{64}$" },
+        "timeoutMs": { "type": "number", "exclusiveMinimum": 0, "maximum": 3600000 },
+        "cpus": { "type": "number", "exclusiveMinimum": 0, "maximum": 16 },
+        "memoryMb": { "type": "integer", "minimum": 16, "maximum": 32768 },
+        "pids": { "type": "integer", "minimum": 1, "maximum": 4096 },
+        "network": { "enum": ["none", "proxy"] },
+        "allowedDomains": { "$ref": "#/$defs/strings" },
+        "requiredForReview": { "type": "boolean" },
+        "nodeModulesPath": { "type": "string", "pattern": "^/opt/[a-z0-9._/-]+/node_modules$" }
+      }
+    }
+  }
+}

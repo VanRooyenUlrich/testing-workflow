@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ai-delivery/live-acceptance-receipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "provider", "status", "head", "providerVersion", "completedAt", "host", "runtimeImage", "riskProfiles", "checks"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "provider": { "enum": ["codex", "claude", "copilot", "generic-mcp"] },
+    "status": { "const": "PASS" },
+    "head": { "type": "string", "pattern": "^[a-f0-9]{40}(?:[a-f0-9]{24})?$" },
+    "providerVersion": { "type": "string", "minLength": 1, "maxLength": 256 },
+    "completedAt": { "type": "string", "format": "date-time" },
+    "host": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["os", "arch", "nodeVersion", "docker"],
+      "properties": {
+        "os": { "const": "win32" },
+        "arch": { "const": "x64" },
+        "nodeVersion": { "type": "string", "pattern": "^v?22\\." },
+        "docker": { "type": "string", "pattern": "^linux/" }
+      }
+    },
+    "runtimeImage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference", "localId"],
+      "properties": {
+        "reference": { "type": "string", "minLength": 1 },
+        "localId": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+      }
+    },
+    "riskProfiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["LIGHTWEIGHT", "STANDARD", "HIGH_RISK"],
+      "properties": {
+        "LIGHTWEIGHT": { "$ref": "#/$defs/profile" },
+        "STANDARD": { "$ref": "#/$defs/profile" },
+        "HIGH_RISK": { "$ref": "#/$defs/profile" }
+      }
+    },
+    "checks": { "type": "array", "minItems": 9, "items": { "$ref": "#/$defs/check" } }
+  },
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "workItem", "completionEvidenceHash", "deliveryEvidenceHash"],
+      "properties": {
+        "status": { "const": "PASS" },
+        "workItem": { "type": "string", "minLength": 1 },
+        "completionEvidenceHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "deliveryEvidenceHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "evidenceHash"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "status": { "const": "PASS" },
+        "evidenceHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

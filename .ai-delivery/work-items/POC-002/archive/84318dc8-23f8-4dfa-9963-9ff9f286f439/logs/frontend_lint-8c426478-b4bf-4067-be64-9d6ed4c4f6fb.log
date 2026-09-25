@@ -1,0 +1,13 @@
+stdout:
+
+> testing-workflow@1.0.0 frontend:lint
+> npm run lint --workspace frontend
+
+
+> issue-tracker-frontend@0.1.0 lint
+> eslint .
+
+
+
+stderr:
+

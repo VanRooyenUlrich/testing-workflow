@@ -1,0 +1,15 @@
+stdout:
+    Determining projects to restore...
+/workspace/src/IssueTracker.Api/IssueTracker.Api.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json. [/workspace/IssueTracker.sln] [/workspace/ai-delivery-validation.targets]
+/workspace/src/IssueTracker.Core/IssueTracker.Core.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json. [/workspace/IssueTracker.sln] [/workspace/ai-delivery-validation.targets]
+    Restored /workspace/src/IssueTracker.Core/IssueTracker.Core.csproj (in 5.93 sec).
+    Restored /workspace/src/IssueTracker.Api/IssueTracker.Api.csproj (in 5.93 sec).
+/workspace/src/IssueTracker.Infrastructure/IssueTracker.Infrastructure.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json. [/workspace/IssueTracker.sln] [/workspace/ai-delivery-validation.targets]
+    Restored /workspace/src/IssueTracker.Infrastructure/IssueTracker.Infrastructure.csproj (in 6 ms).
+/workspace/tests/IssueTracker.Api.Tests/IssueTracker.Api.Tests.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json. [/workspace/IssueTracker.sln] [/workspace/ai-delivery-validation.targets]
+    Restored /workspace/tests/IssueTracker.Api.Tests/IssueTracker.Api.Tests.csproj (in 74 ms).
+
+
+stderr:
+An issue was encountered verifying workloads. For more information, run "dotnet workload update".
+

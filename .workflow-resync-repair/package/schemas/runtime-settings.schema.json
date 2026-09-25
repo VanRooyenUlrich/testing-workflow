@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ai-delivery/runtime-settings.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "providers"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "providers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "codex": { "$ref": "#/$defs/modelProvider" },
+        "claude": { "$ref": "#/$defs/modelProvider" },
+        "copilot": { "$ref": "#/$defs/copilot" },
+        "generic-mcp": { "$ref": "#/$defs/generic" }
+      }
+    }
+  },
+  "$defs": {
+    "modelProvider": { "type": "object", "additionalProperties": false, "required": ["model"], "properties": { "model": { "type": "string", "minLength": 1, "maxLength": 200 } } },
+    "copilot": { "type": "object", "additionalProperties": false, "required": ["authentication"], "properties": { "authentication": { "const": "vscode-login" } } },
+    "generic": { "type": "object", "additionalProperties": false, "required": [], "properties": {} }
+  }
+}

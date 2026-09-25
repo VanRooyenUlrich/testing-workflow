@@ -1,0 +1,2 @@
+export {};
+//# sourceMappingURL=remote-entry.d.ts.map

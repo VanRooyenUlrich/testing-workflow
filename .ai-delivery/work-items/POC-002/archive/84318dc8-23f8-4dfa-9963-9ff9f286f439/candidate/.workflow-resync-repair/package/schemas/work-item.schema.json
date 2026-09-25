@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://runninghill.example/ai-delivery/work-item.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "relativePath", "sha256", "updatedAt"],
+      "properties": {
+        "type": { "enum": ["discovery", "specification", "architecture-impact", "plan", "review"] },
+        "relativePath": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "enforcementEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sessionId", "snapshotHash", "governanceHash", "manifestHash"],
+      "properties": {
+        "sessionId": { "type": "string", "minLength": 1 },
+        "snapshotHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "governanceHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "manifestHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  },
+  "required": ["schemaVersion", "gateVersion", "id", "project", "ticket", "createdAt", "createdBy", "state", "selectedProfile", "risk", "artifacts", "confirmations", "validations", "capabilityManifestHash", "revision"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "gateVersion": { "enum": [0, 1] },
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$" },
+    "project": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$" },
+    "ticket": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "createdBy": { "type": "string", "minLength": 1 },
+    "state": { "enum": ["DISCOVERING", "SPEC_DRAFT", "SPEC_ACCEPTED", "PLANNING", "PLAN_APPROVED", "IMPLEMENTING", "VALIDATING", "READY_FOR_REVIEW", "COMPLETE"] },
+    "selectedProfile": { "enum": ["LIGHTWEIGHT", "STANDARD", "HIGH_RISK"] },
+    "risk": { "$ref": "risk-assessment.schema.json" },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "discovery": { "allOf": [{ "$ref": "#/$defs/artifact" }, { "properties": { "type": { "const": "discovery" } } }] },
+        "specification": { "allOf": [{ "$ref": "#/$defs/artifact" }, { "properties": { "type": { "const": "specification" } } }] },
+        "architecture-impact": { "allOf": [{ "$ref": "#/$defs/artifact" }, { "properties": { "type": { "const": "architecture-impact" } } }] },
+        "plan": { "allOf": [{ "$ref": "#/$defs/artifact" }, { "properties": { "type": { "const": "plan" } } }] },
+        "review": { "allOf": [{ "$ref": "#/$defs/artifact" }, { "properties": { "type": { "const": "review" } } }] }
+      }
+    },
+    "confirmations": { "type": "array", "items": { "$ref": "confirmation.schema.json" } },
+    "validations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "outcome", "summary", "policyValidation", "timestamp", "stale", "enforcement", "execution"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "outcome": { "enum": ["PASS", "FAIL"] },
+          "summary": { "type": "string" },
+          "policyValidation": { "type": "boolean" },
+          "timestamp": { "type": "string", "format": "date-time" },
+          "stale": { "type": "boolean" },
+          "enforcement": { "$ref": "#/$defs/enforcementEvidence" },
+          "execution": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "outputHash"],
+            "properties": {
+              "kind": { "enum": ["COMMAND", "FINAL_DIFF"] },
+              "outputHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            }
+          }
+        }
+      }
+    },
+    "review": { "$ref": "review.schema.json" },
+    "capabilityManifestHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "revision": { "type": "integer", "minimum": 0 },
+    "suspension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["active", "reason", "timestamp"],
+      "properties": {
+        "active": { "type": "boolean" },
+        "reason": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "enforcementSession": { "type": "string" },
+    "reviewSession": { "type": "string" },
+    "enforcementEpoch": { "type": "integer", "minimum": 0 },
+    "recoverableCandidateSession": { "type": "string", "minLength": 1 }
+  }
+}

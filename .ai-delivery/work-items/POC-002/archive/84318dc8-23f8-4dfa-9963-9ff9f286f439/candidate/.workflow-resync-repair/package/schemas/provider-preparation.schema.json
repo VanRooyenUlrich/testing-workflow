@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ai-delivery/provider-preparation.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "provider", "sessionId", "epoch", "role", "runtimeHash", "governanceHash", "manifestHash", "entrypoint", "managedFiles", "configurationHash"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "provider": { "enum": ["codex", "claude", "copilot", "generic-mcp"] },
+    "sessionId": { "type": "string", "minLength": 1 },
+    "epoch": { "type": "integer", "minimum": 1 },
+    "role": { "enum": ["discovery", "specification", "planning", "implementation", "validation", "review"] },
+    "runtimeHash": { "$ref": "#/$defs/hash" },
+    "governanceHash": { "$ref": "#/$defs/hash" },
+    "manifestHash": { "$ref": "#/$defs/hash" },
+    "entrypoint": { "type": "string", "minLength": 1 },
+    "managedFiles": { "type": "object", "additionalProperties": { "$ref": "#/$defs/hash" } },
+    "configurationHash": { "$ref": "#/$defs/hash" }
+  },
+  "$defs": { "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" } }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "host": {
+    "windows": "11 x64",
+    "node": "22.x",
+    "dockerDesktop": "Linux engine"
+  },
+  "providers": {
+    "codex": { "distribution": "@openai/codex", "versionPolicy": "MINIMUM", "version": "0.150.0" },
+    "claude": { "distribution": "@anthropic-ai/claude-code", "versionPolicy": "EXACT", "version": "2.1.267" },
+    "copilot": { "distribution": "GitHub.copilot", "versionPolicy": "LIVE_RECEIPT" },
+    "generic-mcp": { "distribution": "ai-delivery-workflow", "versionPolicy": "BUNDLED" }
+  },
+  "mcpProtocol": "2024-11-05",
+  "boundaries": {
+    "copilot": "attached-container named volume, read-only workspace, trusted MCP controller, allowlisted CONNECT proxy",
+    "validation": "network none, no model credentials, no Docker socket"
+  }
+}

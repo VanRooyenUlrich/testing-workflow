@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ai-delivery/toolchain-receipt.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "project", "preparedAt", "inputs", "images", "commands"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "project": { "type": "string", "minLength": 1 },
+    "preparedAt": { "type": "string", "format": "date-time" },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    },
+    "images": { "type": "array", "items": { "$ref": "#/$defs/image" } },
+    "commands": { "type": "array", "items": { "$ref": "#/$defs/command" } }
+  },
+  "$defs": {
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["configured", "localId", "preparedId", "kind"],
+      "properties": {
+        "configured": { "type": "string", "minLength": 1 },
+        "localId": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "preparedId": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "kind": { "enum": ["node", "bun", "dotnet"] }
+      }
+    },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "definitionHash", "outputHash", "runtimeImage"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "definitionHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "outputHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "runtimeImage": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

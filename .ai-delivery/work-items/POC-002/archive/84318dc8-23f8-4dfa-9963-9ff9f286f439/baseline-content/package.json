@@ -1,0 +1,23 @@
+{
+  "name": "testing-workflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "lint": "node --check src/index.js",
+    "test": "node --test",
+    "frontend:install": "npm ls --workspace frontend --depth=0",
+    "frontend:build": "npm run build --workspace frontend",
+    "frontend:lint": "npm run lint --workspace frontend",
+    "frontend:test": "npm run test --workspace frontend"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "ai-delivery-workflow": "file:releases/ai-delivery-workflow-1.0.0.tgz"
+  }
+}

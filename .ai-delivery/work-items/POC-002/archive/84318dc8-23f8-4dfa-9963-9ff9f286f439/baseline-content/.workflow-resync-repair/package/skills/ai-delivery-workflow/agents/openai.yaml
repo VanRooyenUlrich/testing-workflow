@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Delivery Workflow"
+  short_description: "Run governed delivery from discovery through promotion"
+  default_prompt: "Use $ai-delivery-workflow to carry this change through the repository's governed lifecycle."

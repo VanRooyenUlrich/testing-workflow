@@ -1,0 +1,73 @@
+stdout:
+
+> testing-workflow@1.0.0 test
+> node --test test/*.test.js
+
+TAP version 13
+# Subtest: session resync dispatches before active-session loading
+ok 1 - session resync dispatches before active-session loading
+  ---
+  duration_ms: 9.064065
+  type: 'test'
+  ...
+# Subtest: greet returns a personalized message
+ok 2 - greet returns a personalized message
+  ---
+  duration_ms: 1.479828
+  type: 'test'
+  ...
+# Subtest: greet rejects an empty name
+ok 3 - greet rejects an empty name
+  ---
+  duration_ms: 0.797325
+  type: 'test'
+  ...
+# Subtest: Codex compatibility accepts the configured minimum and higher versions
+ok 4 - Codex compatibility accepts the configured minimum and higher versions
+  ---
+  duration_ms: 1.887251
+  type: 'test'
+  ...
+# Subtest: Codex compatibility rejects versions below the minimum or without a semantic version
+ok 5 - Codex compatibility rejects versions below the minimum or without a semantic version
+  ---
+  duration_ms: 0.443265
+  type: 'test'
+  ...
+# Subtest: exact provider policies remain exact
+ok 6 - exact provider policies remain exact
+  ---
+  duration_ms: 0.460638
+  type: 'test'
+  ...
+# Subtest: review sessions advertise read-only review operations without validation operations
+ok 7 - review sessions advertise read-only review operations without validation operations
+  ---
+  duration_ms: 1.602822
+  type: 'test'
+  ...
+# Subtest: validation sessions retain validation and fixed-command operations
+ok 8 - validation sessions retain validation and fixed-command operations
+  ---
+  duration_ms: 0.537251
+  type: 'test'
+  ...
+# Subtest: prepared commands retain the configured definition hash in receipts
+ok 9 - prepared commands retain the configured definition hash in receipts
+  ---
+  duration_ms: 431.062684
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 556.101387
+
+
+stderr:
+

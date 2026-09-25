@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ai-delivery/provider-compatibility.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "host", "providers", "mcpProtocol", "boundaries"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "host": {
+      "type": "object", "additionalProperties": false,
+      "required": ["windows", "node", "dockerDesktop"],
+      "properties": { "windows": { "const": "11 x64" }, "node": { "const": "22.x" }, "dockerDesktop": { "const": "Linux engine" } }
+    },
+    "providers": {
+      "type": "object", "additionalProperties": false,
+      "required": ["codex", "claude", "copilot", "generic-mcp"],
+      "properties": {
+        "codex": { "$ref": "#/$defs/minimum" }, "claude": { "$ref": "#/$defs/exact" },
+        "copilot": { "$ref": "#/$defs/live" }, "generic-mcp": { "$ref": "#/$defs/bundled" }
+      }
+    },
+    "mcpProtocol": { "const": "2024-11-05" },
+    "boundaries": {
+      "type": "object", "additionalProperties": false, "required": ["copilot", "validation"],
+      "properties": { "copilot": { "type": "string", "minLength": 1 }, "validation": { "type": "string", "minLength": 1 } }
+    }
+  },
+  "$defs": {
+    "exact": {
+      "type": "object", "additionalProperties": false, "required": ["distribution", "versionPolicy", "version"],
+      "properties": { "distribution": { "type": "string", "minLength": 1 }, "versionPolicy": { "const": "EXACT" }, "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" } }
+    },
+    "minimum": {
+      "type": "object", "additionalProperties": false, "required": ["distribution", "versionPolicy", "version"],
+      "properties": { "distribution": { "type": "string", "minLength": 1 }, "versionPolicy": { "const": "MINIMUM" }, "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" } }
+    },
+    "live": {
+      "type": "object", "additionalProperties": false, "required": ["distribution", "versionPolicy"],
+      "properties": { "distribution": { "const": "GitHub.copilot" }, "versionPolicy": { "const": "LIVE_RECEIPT" } }
+    },
+    "bundled": {
+      "type": "object", "additionalProperties": false, "required": ["distribution", "versionPolicy"],
+      "properties": { "distribution": { "const": "ai-delivery-workflow" }, "versionPolicy": { "const": "BUNDLED" } }
+    }
+  }
+}

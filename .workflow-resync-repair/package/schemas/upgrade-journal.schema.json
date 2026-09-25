@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://runninghill.example/ai-delivery/upgrade-journal.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "plan", "operations", "pending"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packageVersion", "schemaVersion", "governanceVersion", "interrupted", "operations", "planHash"],
+      "properties": {
+        "packageVersion": { "type": "string" },
+        "schemaVersion": { "type": "integer", "minimum": 1 },
+        "governanceVersion": { "type": "integer", "minimum": 1 },
+        "interrupted": { "const": false },
+        "operations": { "type": "array", "items": { "$ref": "#/$defs/planOperation" } },
+        "planHash": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["target", "temporary", "backup", "currentHash", "proposedHash", "proposed"],
+        "properties": {
+          "target": { "type": "string", "minLength": 1 },
+          "temporary": { "type": "string", "minLength": 1 },
+          "backup": { "type": "string", "minLength": 1 },
+          "currentHash": { "$ref": "#/$defs/hash" },
+          "proposedHash": { "$ref": "#/$defs/hash" },
+          "proposed": { "type": "object" }
+        }
+      }
+    },
+    "pending": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "planOperation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "project", "path", "from", "to", "currentHash", "proposedHash", "divergent", "action", "migrations"],
+      "properties": {
+        "kind": { "enum": ["governance", "work-item"] },
+        "project": { "type": "string" },
+        "path": { "type": "string" },
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "currentHash": { "$ref": "#/$defs/hash" },
+        "proposedHash": { "$ref": "#/$defs/hash" },
+        "divergent": { "type": "boolean" },
+        "action": { "enum": ["UNCHANGED", "MIGRATE"] },
+        "migrations": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://runninghill.example/ai-delivery/risk-assessment.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["minimumProfile", "reasons", "input"],
+  "properties": {
+    "minimumProfile": { "enum": ["LIGHTWEIGHT", "STANDARD", "HIGH_RISK"] },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "source", "profile", "nonDowngradable"],
+        "properties": {
+          "code": { "type": "string" }, "source": { "type": "string" },
+          "profile": { "enum": ["LIGHTWEIGHT", "STANDARD", "HIGH_RISK"] },
+          "nonDowngradable": { "type": "boolean" }, "detail": { "type": "string" }
+        }
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ticketMetadata": { "type": "object", "additionalProperties": { "type": "string" } },
+        "affectedPaths": { "$ref": "#/$defs/strings" },
+        "requestedCommands": { "$ref": "#/$defs/strings" },
+        "dataClassification": { "enum": ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED"] },
+        "dependencyChanges": { "$ref": "#/$defs/strings" },
+        "architectureImpact": { "type": "boolean" },
+        "implementationIntent": { "type": "string" },
+        "networkRequired": { "type": "boolean" },
+        "databaseMigration": { "type": "boolean" },
+        "authorizationChange": { "type": "boolean" },
+        "credentialHandling": { "type": "boolean" }
+      }
+    }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } }
+  }
+}

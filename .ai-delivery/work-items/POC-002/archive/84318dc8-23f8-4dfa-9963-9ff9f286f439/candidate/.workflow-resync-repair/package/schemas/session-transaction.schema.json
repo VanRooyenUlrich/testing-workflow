@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ai-delivery/session-transaction.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "transactionId", "workItem", "project", "expectedRevision", "expectedEpoch", "newSession", "state", "createdAt"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "transactionId": { "type": "string", "minLength": 1 },
+    "workItem": { "type": "string", "minLength": 1 },
+    "project": { "type": "string", "minLength": 1 },
+    "expectedRevision": { "type": "integer", "minimum": 0 },
+    "expectedEpoch": { "type": "integer", "minimum": 0 },
+    "newSession": { "$ref": "#/$defs/session" },
+    "previousSession": { "type": "string", "minLength": 1 },
+    "previousReviewSession": { "type": "string", "minLength": 1 },
+    "state": { "enum": ["INTENT", "SESSION_WRITTEN", "BOUND"] },
+    "createdAt": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["directory", "id", "epoch"],
+      "properties": {
+        "directory": { "type": "string", "minLength": 1 },
+        "id": { "type": "string", "minLength": 1 },
+        "epoch": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

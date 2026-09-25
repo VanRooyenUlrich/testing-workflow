@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/ai-delivery/promotion-journal.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "transactionId", "workItem", "sessionId", "confirmationHash", "snapshotHash", "state", "changes", "createdAt", "updatedAt"],
+  "properties": {
+    "schemaVersion": { "const": 1 }, "transactionId": { "type": "string", "minLength": 1 }, "workItem": { "type": "string", "minLength": 1 }, "sessionId": { "type": "string", "minLength": 1 },
+    "confirmationHash": { "$ref": "#/$defs/hash" }, "snapshotHash": { "$ref": "#/$defs/hash" }, "state": { "enum": ["INTENT", "APPLYING", "APPLIED", "ROLLING_BACK", "ROLLED_BACK"] },
+    "changes": { "type": "array", "items": { "$ref": "#/$defs/change" } }, "createdAt": { "type": "string", "format": "date-time" }, "updatedAt": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "change": { "type": "object", "additionalProperties": false, "required": ["path", "before", "after", "applied", "createdDirectories"], "properties": { "path": { "type": "string", "minLength": 1 }, "before": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" }, "after": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" }, "applied": { "type": "boolean" }, "createdDirectories": { "type": "array", "items": { "type": "string" } } } }
+  }
+}

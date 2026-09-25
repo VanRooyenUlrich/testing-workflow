@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://runninghill.example/ai-delivery/capability-manifest.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["workItem", "project", "stage", "riskProfile", "filesystem", "terminal", "git", "mcp", "network", "credentials", "workspace", "promotion"],
+  "properties": {
+    "workItem": { "type": "string" }, "project": { "type": "string" },
+    "stage": { "enum": ["DISCOVERING", "SPEC_DRAFT", "SPEC_ACCEPTED", "PLANNING", "PLAN_APPROVED", "IMPLEMENTING", "VALIDATING", "READY_FOR_REVIEW", "COMPLETE"] },
+    "riskProfile": { "enum": ["LIGHTWEIGHT", "STANDARD", "HIGH_RISK"] },
+    "filesystem": { "$ref": "#/$defs/pathAccess" },
+    "terminal": { "type": "object", "additionalProperties": false, "required": ["available", "arbitraryCommands", "fixedCommands"], "properties": { "available": { "type": "boolean" }, "arbitraryCommands": { "type": "boolean" }, "fixedCommands": { "$ref": "#/$defs/strings" } } },
+    "git": { "$ref": "#/$defs/readMutate" },
+    "mcp": { "type": "object", "additionalProperties": false, "required": ["allowedServers", "allowedOperations"], "properties": { "allowedServers": { "$ref": "#/$defs/strings" }, "allowedOperations": { "$ref": "#/$defs/strings" } } },
+    "network": { "type": "object", "additionalProperties": false, "required": ["enabled", "allowedDomains"], "properties": { "enabled": { "type": "boolean" }, "allowedDomains": { "$ref": "#/$defs/strings" } } },
+    "credentials": { "type": "object", "additionalProperties": false, "required": ["hostCredentialsAvailable"], "properties": { "hostCredentialsAvailable": { "type": "boolean" } } },
+    "workspace": { "type": "object", "additionalProperties": false, "required": ["isolationMode"], "properties": { "isolationMode": { "enum": ["HOST_WORKSPACE", "ISOLATED_WORKTREE", "ISOLATED_ENVIRONMENT"] } } },
+    "promotion": { "type": "object", "additionalProperties": false, "required": ["required"], "properties": { "required": { "type": "boolean" } } }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "pathAccess": { "type": "object", "additionalProperties": false, "required": ["read", "write", "delete"], "properties": { "read": { "$ref": "#/$defs/strings" }, "write": { "$ref": "#/$defs/strings" }, "delete": { "$ref": "#/$defs/strings" } } },
+    "readMutate": { "type": "object", "additionalProperties": false, "required": ["inspect", "mutate"], "properties": { "inspect": { "type": "boolean" }, "mutate": { "type": "boolean" } } }
+  }
+}

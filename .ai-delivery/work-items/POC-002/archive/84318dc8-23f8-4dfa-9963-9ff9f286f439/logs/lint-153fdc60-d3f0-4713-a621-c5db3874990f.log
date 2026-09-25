@@ -1,0 +1,9 @@
+stdout:
+
+> testing-workflow@1.0.0 lint
+> node --check src/index.js
+
+
+
+stderr:
+

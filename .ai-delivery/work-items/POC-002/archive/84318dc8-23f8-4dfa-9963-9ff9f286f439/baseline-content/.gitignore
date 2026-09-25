@@ -1,0 +1,27 @@
+node_modules/
+.ai-delivery/toolchains/
+
+# .NET build and test output
+[Bb]in/
+[Oo]bj/
+TestResults/
+artifacts/
+
+# IDE and user-specific state
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Local development configuration
+appsettings.Local.json
+
+# Frontend build, test, and local configuration
+.next/
+coverage/
+.env
+.env.*
+!.env.example
+.vite/

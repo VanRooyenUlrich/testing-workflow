@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://runninghill.example/ai-delivery/evidence-event.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sequence", "timestamp", "type", "data", "previousHash", "hash"],
+  "properties": {
+    "sequence": { "type": "integer", "minimum": 1 }, "timestamp": { "type": "string", "format": "date-time" }, "type": { "type": "string" }, "workItem": { "type": "string" }, "project": { "type": "string" }, "lifecycleState": { "type": "string" }, "data": { "type": "object" }, "previousHash": { "type": ["string", "null"] }, "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

@@ -1,0 +1,38 @@
+stdout:
+
+> testing-workflow@1.0.0 frontend:build
+> npm run build --workspace frontend
+
+
+> issue-tracker-frontend@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.6 (webpack)
+✓ Running next.config.ts took 36ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 7.3s
+  Running TypeScript ...
+  Finished TypeScript in 3.2s ...
+  Collecting page data using 4 workers ...
+  Generating static pages using 4 workers (0/3) ...
+✓ Generating static pages using 4 workers (3/3) in 1294ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+└ ○ /_not-found
+
+
+○  (Static)  prerendered as static content
+
+
+
+stderr:
+

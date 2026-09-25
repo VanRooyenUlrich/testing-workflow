@@ -1,0 +1,1 @@
+{"version":3,"file":"scope.d.ts","sourceRoot":"","sources":["../../../src/governance/scope.ts"],"names":[],"mappings":"AAEA,OAAO,KAAK,EAAE,iBAAiB,EAAE,MAAM,oBAAoB,CAAC;AAE5D,wBAAgB,iBAAiB,CAAC,UAAU,EAAE,iBAAiB,EAAE,IAAI,EAAE,MAAM,GAAG;IAAE,OAAO,EAAE,OAAO,CAAC;IAAC,MAAM,EAAE,MAAM,CAAA;CAAE,CAMnH;AAED,wBAAgB,mBAAmB,CAAC,UAAU,EAAE,iBAAiB,EAAE,IAAI,EAAE,MAAM,GAAG,IAAI,CAErF"}
